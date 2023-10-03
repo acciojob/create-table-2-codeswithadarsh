@@ -1,20 +1,20 @@
 function createTable() {
-const rn = prompt('Input number of rows');
-const cn = prompt('Input number of columns');
+    //Write your code here
+    const rows = parseInt(prompt("Input number of rows"));
 
-const myTable = document.getElementById('myTable');
+    // Prompt for number of columns
+    const cols = parseInt(prompt("Input number of columns"));
 
-for (let i = 0; i < rn; i++) {
-const row = document.createElement('tr');
+    // Get the table element
+    const table = document.getElementById("myTable");
 
-for (let j = 0; j < cn; j++) {
-const cell = document.createElement('td');
-const cellText = document.createTextNode(Row-${i} Column-${j});
-row.appendChild(cell);
-cell.appendChild(cellText);
+    // Create rows and cells
+    for (let i = 0; i < rows; i++) {
+        const row = table.insertRow(i);
+        for (let j = 0; j < cols; j++) {
+            const cell = row.insertCell(j);
+            cell.innerHTML = `Row-${i} Column-${j}`;
+        }
+    }
 
-}
-//Row-${Math.floor(index / 2)} Column-${index % 2}
-myTable.appendChild(row);
-}
 }
