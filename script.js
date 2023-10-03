@@ -1,21 +1,20 @@
 function createTable() {
-    //Write your code here
-	var rn = prompt("Input number of rows");; // Number of rows (can be dynamically determined as per your requirement)
-      var cn = prompt("Input number of columns"); // Prompt for number of columns
+const rn = prompt('Input number of rows');
+const cn = prompt('Input number of columns');
 
-      if(cn) {
-        // Check if the user entered a value and clicked OK
-        var table = document.getElementById("myTable");
-        table.innerHTML = ""; // Clear the existing table content
+const myTable = document.getElementById('myTable');
 
-        // Create the table rows and cells
-        for (var i = 0; i < rn; i++) {
-          var row = table.insertRow(i);
-          for (var j = 0; j < cn; j++) {
-            var cell = row.insertCell(j);
-            cell.innerHTML = "Row-" + (i ) + " Column-" + (j );
-          }
-        }
-      }
-    }
-  
+for (let i = 0; i < rn; i++) {
+const row = document.createElement('tr');
+
+for (let j = 0; j < cn; j++) {
+const cell = document.createElement('td');
+const cellText = document.createTextNode(Row-${i} Column-${j});
+row.appendChild(cell);
+cell.appendChild(cellText);
+
+}
+//Row-${Math.floor(index / 2)} Column-${index % 2}
+myTable.appendChild(row);
+}
+}
